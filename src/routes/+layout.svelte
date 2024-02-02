@@ -3,6 +3,9 @@
 	import TopAppBar, { Row, Section, Title, AutoAdjust } from '@smui/top-app-bar';
 
 	// export let data: LayoutData;
+	export const prerender = true;
+	export const trailingSlash = 'always';
+
 	let topAppBar: TopAppBar;
 </script>
 
