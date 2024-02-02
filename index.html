@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" href="./favicon.png" />
+		<!-- <link rel="stylesheet" href="/smui.css" media="(prefers-color-scheme: light)" />
+		<link
+			rel="stylesheet"
+			href="/smui-dark.css"
+			media="screen and (prefers-color-scheme: dark)"
+		/> -->
+		<link rel="stylesheet" href="/svelte-dieroll/smui.css" media="(prefers-color-scheme: light)" />
+		<link
+			rel="stylesheet"
+			href="/svelte-dieroll/smui-dark.css"
+			media="screen and (prefers-color-scheme: dark)"
+		/>
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		
+		<link href="./_app/immutable/assets/0.qy3laFbO.css" rel="stylesheet">
+		<link href="./_app/immutable/assets/2.VCkH-dcX.css" rel="stylesheet">
+		<link rel="modulepreload" href="./_app/immutable/entry/start.KBDwZQqV.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/entry.3tj_C5Fj.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/scheduler.zzXhku6Y.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/index.Z1WYoNO_.js">
+		<link rel="modulepreload" href="./_app/immutable/entry/app.XtLaOiox.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/index.dAren2Gv.js">
+		<link rel="modulepreload" href="./_app/immutable/nodes/0.cZOLWKsp.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/classAdderBuilder.lLTJ11dA.js">
+		<link rel="modulepreload" href="./_app/immutable/nodes/2.tBiHQF0I.js">
+	</head>
+	<body data-sveltekit-preload-data="hover">
+		<div style="display: contents">   <header class="mdc-top-app-bar mdc-top-app-bar--fixed" style=""><div class="mdc-top-app-bar__row"><section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start"><span class="mdc-top-app-bar__title">Die Roll App</span> </section></div> </header> <main class=""><div class="content svelte-1ldbd3a"><div class="main svelte-k3cqze"><div class="smui-paper smui-paper--raised smui-paper--elevation-z1 smui-paper--rounded"><h5 class="smui-paper__title">Dices</h5> <div><button class="mdc-button mdc-button--raised" style=""><div class="mdc-button__ripple"></div> <span class="mdc-button__label">D6</span></button> <button class="mdc-button mdc-button--raised" style=""><div class="mdc-button__ripple"></div> <span class="mdc-button__label">2D6</span></button> <button class="mdc-button mdc-button--raised" style=""><div class="mdc-button__ripple"></div> <span class="mdc-button__label">1D10</span></button> <button class="mdc-button mdc-button--raised" style=""><div class="mdc-button__ripple"></div> <span class="mdc-button__label">1D20</span></button></div> </div> <div class="smui-paper smui-paper--raised smui-paper--elevation-z1 smui-paper--rounded"><h5 class="smui-paper__title">Result </h5> <div class="smui-paper__content"><div class="content svelte-k3cqze"><span>0</span> <span>Sum: 0</span></div></div> </div> <div class="smui-paper smui-paper--raised smui-paper--elevation-z1 smui-paper--rounded"><h5 class="smui-paper__title"><div class="counter svelte-k3cqze"><span>Number of rolls: 0</span> <button class="mdc-button mdc-button--raised" style=""><div class="mdc-button__ripple"></div> <span class="mdc-button__label">Reset counter</span></button></div></h5> </div> </div></div></main> 
+			
+			<script>
+				{
+					__sveltekit_1vr8j0e = {
+						base: new URL(".", location).pathname.slice(0, -1),
+						assets: "/svelte-dieroll"
+					};
+
+					const element = document.currentScript.parentElement;
+
+					const data = [null,null];
+
+					Promise.all([
+						import("./_app/immutable/entry/start.KBDwZQqV.js"),
+						import("./_app/immutable/entry/app.XtLaOiox.js")
+					]).then(([kit, app]) => {
+						kit.start(app, element, {
+							node_ids: [0, 2],
+							data,
+							form: null,
+							error: null
+						});
+					});
+				}
+			</script>
+		</div>
+	</body>
+</html>
