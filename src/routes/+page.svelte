@@ -1,15 +1,19 @@
 <script lang="ts">
 	import Paper, { Title, Content } from '@smui/paper';
 	import Button, { Label } from '@smui/button';
+	import Counter from '$lib/counter.svelte';
 
-	let counter: number = 0;
 	let rolls: number[] = [0];
 	let currentRoll: string = '';
+
+	let counterComponent: Counter;
 
 	function roll(nbOfDices: number, diceSize: number) {
 		rolls = [];
 		currentRoll = `${nbOfDices}D${diceSize}`;
-		counter++;
+
+		// Increment counterComponent
+		counterComponent.incrementCounter();
 
 		for (let index = 0; index < nbOfDices; index++) {
 			rolls = [...rolls, getRandom(diceSize)];
@@ -36,7 +40,7 @@
 			<Button on:click={() => roll(1, 10)} variant="raised">
 				<Label>1D10</Label>
 			</Button>
-			<Button on:click={() => roll(2, 20)} variant="raised">
+			<Button on:click={() => roll(1, 20)} variant="raised">
 				<Label>1D20</Label>
 			</Button>
 		</div>
@@ -54,16 +58,7 @@
 			</div>
 		</Content>
 	</Paper>
-	<Paper>
-		<Title>
-			<div class="counter">
-				<span>Number of rolls: {counter}</span>
-				<Button on:click={() => (counter = 0)} variant="raised">
-					<Label>Reset counter</Label>
-				</Button>
-			</div>
-		</Title>
-	</Paper>
+	<Counter bind:this={counterComponent} />
 </div>
 
 <style>
@@ -75,9 +70,5 @@
 		display: flex;
 		justify-content: space-around;
 		font-size: 48px;
-	}
-	.counter {
-		display: flex;
-		justify-content: space-between;
 	}
 </style>
