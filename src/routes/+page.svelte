@@ -2,11 +2,14 @@
 	import Paper, { Title, Content } from '@smui/paper';
 	import Button, { Label } from '@smui/button';
 	import Counter from '$lib/counter.svelte';
+	import History from '$lib/history.svelte';
 
 	let rolls: number[] = [0];
 	let currentRoll: string = '';
 
+	// Components
 	let counterComponent: Counter;
+	let historyComponent: History;
 
 	function roll(nbOfDices: number, diceSize: number) {
 		rolls = [];
@@ -18,6 +21,9 @@
 		for (let index = 0; index < nbOfDices; index++) {
 			rolls = [...rolls, getRandom(diceSize)];
 		}
+
+		// Add to history
+		historyComponent.addToHistory(rolls, diceSize);
 	}
 
 	function getRandom(max: number) {
@@ -30,7 +36,7 @@
 <div class="main">
 	<Paper>
 		<Title>Dices</Title>
-		<div>
+		<Content>
 			<Button on:click={() => roll(1, 6)} variant="raised">
 				<Label>D6</Label>
 			</Button>
@@ -43,7 +49,7 @@
 			<Button on:click={() => roll(1, 20)} variant="raised">
 				<Label>1D20</Label>
 			</Button>
-		</div>
+		</Content>
 	</Paper>
 	<Paper>
 		<Title>Result {currentRoll}</Title>
@@ -53,12 +59,13 @@
 					{rolls}
 				</span>
 				<span>
-					Sum: {sum}
+					Total: {sum}
 				</span>
 			</div>
 		</Content>
 	</Paper>
 	<Counter bind:this={counterComponent} />
+	<History bind:this={historyComponent} />
 </div>
 
 <style>
